@@ -10,4 +10,7 @@
 
 
 大致页面:<br>
-![image](https://github.com/xxxx.jpg)
+![image](ProxyPool/show/demo1.png)
+<br>得到可用的代理
+![image](ProxyPool/show/demo2.png)
+

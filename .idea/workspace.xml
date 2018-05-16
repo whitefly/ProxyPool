@@ -40,14 +40,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="crawler.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="crawler.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/crawl/crawler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="42" lean-forward="true" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+            <state relative-caret-position="405">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="36" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -110,6 +119,7 @@
         <option value="$PROJECT_DIR$/crawl/getter.py" />
         <option value="$PROJECT_DIR$/crawl/proxy_test.py" />
         <option value="$PROJECT_DIR$/proxy_DB/my_client.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -146,6 +156,11 @@
               <item name="proxy_pool" type="b2602c69:ProjectViewProjectNode" />
               <item name="proxy_pool" type="462c0819:PsiDirectoryNode" />
               <item name="proxy_DB" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proxy_pool" type="b2602c69:ProjectViewProjectNode" />
+              <item name="proxy_pool" type="462c0819:PsiDirectoryNode" />
+              <item name="show" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -269,11 +284,19 @@
       <option name="project" value="LOCAL" />
       <updated>1526461346573</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="图片上传">
+      <created>1526462014891</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1526462014891</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
@@ -306,7 +329,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1.完成代理的抓取&#10;2.代理时效的检测&#10;3.redis的存储&#10;&#10;to do:&#10;1.编写调度器&#10;2.使用flask作为api接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.完成代理的抓取&#10;2.代理时效的检测&#10;3.redis的存储&#10;&#10;to do:&#10;1.编写调度器&#10;2.使用flask作为api接口" />
+    <MESSAGE value="图片上传" />
+    <option name="LAST_COMMIT_MESSAGE" value="图片上传" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -374,11 +398,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/crawl/crawler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="42" lean-forward="true" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+        <state relative-caret-position="405">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="36" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="36" />
         </state>
       </provider>
     </entry>
