@@ -10,7 +10,7 @@
 
 
 大致页面:<br>
-![image](ProxyPool/show/demo1.png)
-<br>得到可用的代理
-![image](ProxyPool/show/demo2.png)
+![image](show/demo1.png)
+<br>得到可用的代理<br>
+![image](show/demo2.png)
 
