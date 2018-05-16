@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04c1b422-6c9b-4a24-a271-4cadd557c76c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/proxy_pool.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crawl/crawler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crawl/getter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crawl/proxy_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy_DB/my_client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/proxy_DB/proxy_error.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="04c1b422-6c9b-4a24-a271-4cadd557c76c" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,8 +43,8 @@
       <file leaf-file-name="crawler.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/crawl/crawler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+            <state relative-caret-position="375">
+              <caret line="25" column="42" lean-forward="true" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -274,11 +262,18 @@
       <option name="presentableId" value="Default" />
       <updated>1526434014922</updated>
     </task>
+    <task id="LOCAL-00001" summary="1.完成代理的抓取&#10;2.代理时效的检测&#10;3.redis的存储&#10;&#10;to do:&#10;1.编写调度器&#10;2.使用flask作为api接口">
+      <created>1526461346573</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1526461346573</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1920" height="1080" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
@@ -308,6 +303,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1.完成代理的抓取&#10;2.代理时效的检测&#10;3.redis的存储&#10;&#10;to do:&#10;1.编写调度器&#10;2.使用flask作为api接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.完成代理的抓取&#10;2.代理时效的检测&#10;3.redis的存储&#10;&#10;to do:&#10;1.编写调度器&#10;2.使用flask作为api接口" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -375,8 +374,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/crawl/crawler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        <state relative-caret-position="375">
+          <caret line="25" column="42" lean-forward="true" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
           </folding>
