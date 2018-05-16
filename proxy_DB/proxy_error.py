@@ -1,0 +1,2 @@
+class PoolEmptyError(Exception):
+    pass
