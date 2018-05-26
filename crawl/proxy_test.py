@@ -16,13 +16,14 @@ class Tester(object):
         self.redis = RedisClient()
 
     async def test_single_provy(self, proxy):
-        async with  ClientSession() as session:
+        async with ClientSession() as session:
             try:
                 real_provy = 'http://' + proxy
-                async with session.get(Target_web, proxy=real_provy, timeout=10) as respose:
+                async with session.get(Target_web, proxy=real_provy, timeout=5) as respose:
+
                     if respose.status in Valid_code:
                         self.redis.set_max(proxy)
-                        print("代理可用", proxy)
+                        print("代理:{}  检查可用 分数设置为为:{}".format(proxy, 100))
                     else:
                         self.redis.decreate(proxy)
                         print("响应码{}不合法".format(respose.status), proxy)
@@ -31,7 +32,6 @@ class Tester(object):
                 print("请求失败", proxy)
 
     def run(self):
-        print("测试样例开始")
         try:
             proxies = self.redis.get_all()
             loop = asyncio.get_event_loop()
@@ -39,10 +39,10 @@ class Tester(object):
                 test_bunch = proxies[i:i + Bunch_size]
                 tasks = [self.test_single_provy(proxy) for proxy in test_bunch]
                 loop.run_until_complete(asyncio.wait(tasks))
-                time.sleep(5)
         except Exception as e:
             print("测试发生错误")
 
 
-T = Tester()
-T.run()
+if __name__ == '__main__':
+    T = Tester()
+    T.run()

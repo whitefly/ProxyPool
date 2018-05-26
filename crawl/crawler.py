@@ -1,6 +1,8 @@
 from bs4 import BeautifulSoup, Tag
 import requests
 
+INTI_PAGE = 15
+
 header = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36"
 }
@@ -39,7 +41,7 @@ class Crawler(object, metaclass=ProxyMetaclass):
 
         return proxies
 
-    def crawl_ip66(self, page_count=4):
+    def crawl_ip66(self, page_count=INTI_PAGE):
         """
         以crawl_开头 方便扩展,返回可迭代对象
         www.66ip.cn
@@ -60,7 +62,7 @@ class Crawler(object, metaclass=ProxyMetaclass):
             except Exception as e:
                 pass
 
-    def crawl_xicidaili(self, page_count=4):
+    def crawl_xicidaili(self, page_count=INTI_PAGE):
         """
         http://www.xicidaili.com/
         :return:

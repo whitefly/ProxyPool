@@ -15,22 +15,11 @@ from proxy_DB.proxy_error import PoolEmptyError
 class RedisClient(object):
 
     def __init__(self, host=REDIS_host, port=REDIS_port, password=REDIS_password):
-        """
-        功能:进行redis连接,官方写法
-        :param host:
-        :param port:
-        :param password:
-        """
+        # host+port
         self.db = redis.StrictRedis(host=host, port=port, decode_responses=True)
 
     def add(self, proxy, score=INIT_score):
-        """
-        默认新插入的代理为10分
-        :param proxy:
-        :param score:
-        :return:
-        """
-
+        # 分数 元素
         if not self.db.zscore(name=REDIS_set, value=proxy):
             self.db.zadd(REDIS_set, score, proxy)
 
@@ -53,14 +42,13 @@ class RedisClient(object):
 
     def decreate(self, proxy):
         """
-        检测到不可用时,减1分
+        检测到不可用时,减3分
         达到0时,进行删除
         :return:
         """
         score = self.db.zscore(name=REDIS_set, value=proxy)
         if score > MIN_score:
-            print("代理:{}  当前分数:{}  暂时不可用 分数-1".format(proxy, score))
-            return self.db.zincrby(REDIS_set, proxy, -1)
+            return self.db.zincrby(REDIS_set, proxy, -4)
         else:
             print("代理:{} 移除".format(proxy))
             return self.db.zrem(REDIS_set, proxy)
@@ -71,14 +59,9 @@ class RedisClient(object):
         :param proxy:
         :return:
         """
-        print("代理:{}  检查可用 分数设置为为:{}".format(proxy, MAX_score))
         return self.db.zadd(REDIS_set, MAX_score, proxy)
 
     def get_count(self):
-        """
-        返回 所有存在的成员个数
-        :return:
-        """
         return self.db.zcard(REDIS_set)
 
     def get_all(self):
@@ -87,3 +70,12 @@ class RedisClient(object):
         :return:
         """
         return self.db.zrangebyscore(REDIS_set, MIN_score, MAX_score)
+
+    def exist(self, proxy):
+        score = self.db.zscore(REDIS_set, proxy)
+        return score is not None
+
+
+if __name__ == '__main__':
+    R = RedisClient()
+    print(R.exist("11"))

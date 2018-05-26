@@ -1,7 +1,7 @@
 from crawl.crawler import Crawler
 from proxy_DB.my_client import RedisClient
 
-POOL_MAX_COUNT = 100000
+POOL_MAX_COUNT = 10000
 
 
 class Getter():
@@ -17,8 +17,11 @@ class Getter():
             for crawFunc_label in self.crawler.__CrawFunc__:
                 proxies = self.crawler.get_proxies(crawFunc_label)
                 for proxy in proxies:
-                    self.redis.add(proxy)
+                    if not self.redis.exist(proxy):
+                        self.redis.add(proxy)
 
 
-g = Getter()
-g.run()
+if __name__ == '__main__':
+    # 测试
+    g = Getter()
+    g.run()
