@@ -1,6 +1,8 @@
 from bs4 import BeautifulSoup, Tag
 import requests
 
+from proxy_DB.my_client import RedisClient
+
 INTI_PAGE = 15
 
 header = {
@@ -30,6 +32,8 @@ class ProxyMetaclass(type):
 
 
 class Crawler(object, metaclass=ProxyMetaclass):
+    def __init__(self):
+        self.BD = RedisClient()
 
     def get_proxies(self, callback):
         # crawler每个ip网站的爬虫,由不同函数写成
@@ -67,12 +71,15 @@ class Crawler(object, metaclass=ProxyMetaclass):
         http://www.xicidaili.com/
         :return:
         """
-        start_url = "http://www.xicidaili.com/nn/{}"
+        start_url = "http://www.xicidaili.com/wt/{}"
+        proxy_port = self.BD.random()
+        proxy = {"http": "http://" + proxy_port}
         urls = (start_url.format(i) for i in range(1, page_count + 1))
         for url in urls:
             print("抓取ing:{}".format(url))
             try:
-                res = requests.get(url, headers=header)
+                #通过代理来获取ip,不然速度很慢
+                res = requests.get(url, headers=header, proxies=proxy)
                 soup = BeautifulSoup(res.text, "lxml")
                 trs = soup.find_all("tr")
                 for tr in trs[2:]:
